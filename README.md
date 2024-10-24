@@ -1,6 +1,3 @@
-Baik, berikut adalah dokumentasi lengkap yang hanya berisi kode dalam format Markdown:
-
-```markdown
 # Dokumentasi Penggunaan Git dan GitHub
 
 ## 1. Pembuatan Repository Pertama
@@ -107,4 +104,51 @@ Jika kamu menerima pesan error bahwa push ditolak karena ada perubahan di remote
 ```bash
 git pull origin main --rebase
 ```
+
+## 8. Melakukan Push Perubahan ke Remote
+
+Setelah melakukan perubahan pada file yang ada di repository lokal, kamu bisa mengulangi proses untuk melakukan push dengan langkah-langkah berikut:
+
+### 8.1 Melakukan Perubahan pada File
+Misalnya, kamu mengedit `README.md`:
+
+```bash
+echo "Menambahkan konten baru" >> README.md
 ```
+
+### 8.2 Menambahkan Perubahan ke Staging Area
+Setelah mengedit file, tambahkan perubahan tersebut ke staging area:
+
+```bash
+git add README.md
+```
+
+### 8.3 Melakukan Commit untuk Perubahan
+Setelah menambahkan ke staging area, lakukan commit untuk menyimpan perubahan:
+
+```bash
+git commit -m "Menambahkan konten baru ke README.md"
+```
+
+### 8.4 Melakukan Push ke Remote
+Setelah melakukan commit, kirim perubahan ke remote repository di GitHub:
+
+```bash
+git push origin main
+```
+
+### 8.5 Jika Push Ditolak
+Jika kamu mengalami error seperti "Updates were rejected because the remote contains work that you do not have locally," lakukan langkah berikut:
+
+1. Ambil perubahan terbaru dari remote:
+
+   ```bash
+   git pull origin main --rebase
+   ```
+
+2. Selesaikan jika ada konflik, kemudian lakukan commit.
+3. Lakukan push lagi:
+
+   ```bash
+   git push origin main
+   ```
